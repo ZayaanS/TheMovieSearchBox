@@ -115,6 +115,7 @@ body{
 #Logo{
 	display: flex;
 	min-width: 278px;
+	text-decoration: none;
 }
 #Logo h1{
 	text-transform: uppercase;
