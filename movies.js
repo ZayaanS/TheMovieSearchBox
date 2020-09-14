@@ -194,6 +194,8 @@ function ShowFullSearch(){
 
 	//add search items to full search
 	document.getElementById("FullSearchResults").innerHTML = searchResults;
+	//change heading
+	document.getElementById("FullSearchHeading").innerHTML = `All Results`;
 	//show page buttons
 	document.getElementById("Pagination").style.display = "flex";
 }
