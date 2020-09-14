@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Movie Search Box</title>
+
+    <!--Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="MovieSearch.css">
+
+    <!-- Icon -->
+    <link rel='icon' href='images/logo.png' type='image/x-icon' />
+</head>
+<body onclick="CloseSearch()" onscroll="ChangeHeaderBg()">
+    <div id="MainRow" class="row d-flex flex-row-reverse">
+
+        <!-- Main Content -->
+        <div id="MainDiv" class='col-xl-10 col-md-12 col-xs-12'>
+
+            <!-- jump link -->
+            <a id="PageTop"></a>
+            <!-- Current Movie -->
+            <div id="CurrentMovie">
+
+                <!-- Header -->
+                <div id="Header" class="fixed-top">
+                    <!-- Logo -->
+                    <div id="Logo">
+                        <h1 id="LogoText1" class="heading">the movie</h1>
+                        <img src="images/logo.png" />
+                        <h1 id="LogoText2" class="heading">search box</h1>
+                    </div>
+                    <!-- Search Div -->
+                    <div id="SearchDiv">
+                        <input type="text" name="SearchInput" id="SearchInput" placeholder="Search Movie Title" oninput="QuickSearch();" />
+                        <button id="SearchButton">
+                            <img src="images/search.svg" />
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Search Box -->
+                <div id="QuickSearchDiv">
+                    <div id="QuickSearchBox"></div>
+                </div>
+
+            </div>
+
+            <!-- jump link -->
+            <a id="FullSearch"></a>
+            <!-- Full Search Div -->
+            <div id="FullSearchDiv">
+                <h4 id="FullSearchHeading">All Results</h4>
+                <div id="FullSearchResults"></div>
+                <div id="Pagination">
+                    <button onclick="PreviousSearch()" id="PrevButton">Previous</button>
+                    <p id="PageNumber"></p>
+                    <button onclick="NextSearch()" id="NextButton">Next</button>
+                </div>
+            </div>
+
+            <!-- Popular -->
+            <div id="PopularMoviesDiv">
+                <h3>Popular<h3>
+                    <div id="PopularDiv" class="row"></div>
+            </div>
+
+        </div>
+
+        <!-- Genres Side Div -->
+        <div id="GenreDiv" class='col-xl-2 col-md-12 col-xs-12'>
+            <h3 class="heading">Genres</h3>
+            <ul id="GenresList"></ul>
+        </div>
+
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p>All Data From</p>
+        <a href="https://www.themoviedb.org" target="about_blank">
+            <img src="images/tmdb.svg">
+        </a>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script type="text/javascript" src="movies.js"></script>
+</body>
+</html>

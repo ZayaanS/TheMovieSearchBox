@@ -1,0 +1,390 @@
+/* ----- fonts ----- */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Staatliches&display=swap');
+
+/* ----- general ----- */
+*{
+	padding: 0;
+	margin: 0;
+	font-family: 'Oswald', sans-serif;
+}
+.heading{
+	font-family: 'Staatliches', cursive;
+}
+body{
+	background-color: #0e0e0e;
+	overflow-x: hidden;
+	max-width: 100vw;
+	min-height: 100vh;
+}
+#MainRow{
+	width: 100%;
+	margin-left: 0px;
+}
+#MainDiv{
+	/*border: solid 5px blue;*/
+	min-height: 100vh;
+	padding: 0 !important;
+}
+
+/* ----- current movie ----- */
+#CurrentMovie{
+	width: 100%;
+	height: 85vh;
+	padding-top: 14vh;
+	padding-bottom: 4vh;
+}
+#CurrentBg{
+	height: 85vh;
+	width: 100%;
+	opacity: 20%;
+	position: absolute;
+	z-index: -10;
+	top: 0;
+}
+#MovieInfo{
+	/*border: solid 3px pink;*/
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	padding: 3vh 3.5vw 0vh 3.5vw;
+	color: #ffffff;
+}
+#CurrentMovieImg{
+	height: 100%;
+	border-radius: 10px;
+}
+#MovieText{
+	/*border: solid 3px orange;*/
+	margin-right: 15vh;
+	margin-top: 4vh;
+}
+#MovieText h1{
+	font-size: 9vh;
+	margin-top: 2vh;
+}
+#MovieText h3{
+	font-size: 2.5vh;
+	margin-top: 2vh;
+	line-height: 3.5vh;
+}
+@media (max-width: 900px) {
+	#CurrentMovie{
+		height: 100vh;
+	}
+	#CurrentBg{
+		height: 100vh;
+	}
+	#MovieText{
+		margin-top: 13vh;
+		/*border: solid orange;*/
+		margin-right: 2vw;
+	}
+	#CurrentMovieImg{
+		height: 90%;
+		margin-top: 70px;
+	}
+}
+/* ----- header ----- */
+#Header{
+	width: 100%;
+	min-height: 10vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 5vh 3.5vw 1vh 20vw;
+}
+/* Large breakpoint */
+@media (max-width: 1199.98px) {
+	#Header{
+		padding: 5vh 3.5vw 1vh 3.5vw;
+	}
+}
+@media (max-width: 900px) {
+	#Header{
+		flex-direction: column;
+		/*border: solid yellow 2px;*/
+		height: 170px;
+		padding-bottom: 2vh;
+	}
+	#Logo{
+		width: 278px;
+	}
+}
+
+/* ----- logo ----- */
+#Logo{
+	display: flex;
+	min-width: 278px;
+}
+#Logo h1{
+	text-transform: uppercase;
+	color: #ffffff;
+	font-size: 30px;
+}
+#Logo img{
+	height: 70px;
+	transform: rotate(10deg);
+	margin-left: 3px;
+	margin-right: -22px;
+	margin-top: -2vh;
+}
+#LogoText1{
+	min-width: 105px;
+}
+#LogoText2{
+	min-width: 124px;
+}
+
+/* ----- search div ----- */
+#SearchDiv{
+	width: 50%;
+	display: flex;
+}
+#SearchDiv input{
+	width: 100%;
+	min-width: 390px;
+	height: 8vh;
+	margin-top: -2vh;
+	background-color: rgba(255,255,255,0.2);
+	border-radius: 5px;
+	border: none;
+	font-family: inherit;
+	padding: 10px 20px;
+	color: #ffffff;
+}
+#SearchDiv input::placeholder{
+	color: rgba(255,255,255,0.7);
+}
+#SearchDiv input:focus, #SearchDiv input:hover{
+	outline: none;
+	background-color: rgba(255,255,255,0.3);
+}
+#SearchDiv button{
+	width: 8vh;
+	min-width: 60px;
+	height: 8vh;
+	background-color: #747373;
+	border: none;
+	padding: 0;
+	border-radius: 5px;
+	margin-left: -50px;
+	margin-top: -2vh;
+}
+#SearchDiv button:hover{
+	cursor: pointer;
+	background-color: #646363;
+}
+#SearchDiv button:focus{
+	outline: none;
+}
+
+/* ----- quick search box ----- */
+#QuickSearchBox{
+	/*border: solid 2px orange;*/
+	width: 37.7vw;
+	position: fixed;
+	right: 3.5vw;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,1);
+	margin-top: -2vh;
+	height: 525px;
+	min-width: 445px;
+	border: solid 2px #545454;
+	flex-direction: column;
+	padding: 15px;
+	padding-top: 10px;
+	z-index: 100;
+	display: none;
+}
+.QuickSearchImg{
+	height: 148.8px;
+	width: 99.2px;
+	margin-right: 10px;
+}
+.QuickSearchItem{
+	display: flex;
+	flex-direction: row;
+	padding: 5px;
+	border-bottom: 0.5px solid #cacaca;
+}
+#QuickSearchDiv{
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+}
+.QuickSearchItem h1{
+	font-size: 3.5vh;
+}
+.QuickSearchItem h3{
+	font-size: 3vh;
+}
+#FullSearchLink{
+	font-size: 2.5vh;
+	text-align: right;
+	text-transform: uppercase;
+	font-family: inherit;
+	text-decoration: none;
+	font-weight: 500;
+}
+.QuickSearchItem:hover{
+	background-color: #e9ebf0;
+	cursor: pointer;
+}
+#FullSearchLink:hover{
+	color: #1c4abd;
+	cursor: pointer;
+}
+
+/* ----- full search div ------ */
+#FullSearchDiv{
+	/*border: solid 4px orange;*/
+	width: 100%;
+	min-height: 50vh;
+	display: none;
+	flex-direction: column;
+	color: #ffffff;
+	padding: 2vh 3.5vw;
+}
+#FullSearchResults{
+	/*border: solid 4px yellow;*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.FullSearchItem{
+	width: 18vw;
+	min-width: 240px;
+}
+.FullSearchItem a{
+	display: flex;
+	flex-direction: column;
+	padding: 10px 25px;
+	margin-bottom: 5px;
+	color: inherit;
+	text-decoration: none;
+	font-family: inherit;
+}
+.FullSearchText h1{
+	font-size: 3vh;
+	margin-top: 5px;
+}
+.FullSearchText h3{
+	font-size: 2.5vh;
+}
+.FullSearchItem:hover{
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.1);
+}
+.FullSearchImg{
+	height: 350px;
+}
+#Pagination{
+	display: flex;
+	/*border: solid 3px yellow;*/
+	justify-content: center;
+	display: none;
+	margin-top: 2vh;
+}
+#Pagination button{
+	width: 100px;
+	padding: 10px;
+	background-color: #ffffff;
+	color: #0e0e0e;
+	border: none;
+	border-radius: 10px;
+	margin: 2px;
+}
+#Pagination button:hover{
+	cursor: pointer;
+	background-color: #A22322;
+}
+#Pagination button:focus{
+	outline: none;
+}
+#PageNumber{
+	margin: 15px 5px;
+}
+/* ----- popular ----- */
+#PopularDiv{
+	/*border: solid 4px yellow;*/
+	width: 100%;
+	min-height: 60vh;
+	color: #ffffff;
+	padding: 0;
+	margin: 0;
+}
+.popularMovieItem img{
+	height: 50vh;
+	margin-top: 2vh;
+}
+#PopularMoviesDiv h3{
+	color: #ffffff;
+	margin: 2vh 3.5vw;
+	font-size: 4.5vh;
+}
+#PopularMoviesDiv{
+	/*border: solid 3px orange;*/
+}
+.popularMovieItem{
+	/*border: solid 2px red;*/
+	width: 25%;
+	min-width: 255px;
+	padding: 0;
+	text-align: center;
+}
+.popularMovieItem a{
+	font-family: inherit;
+	color: inherit;
+	text-decoration: none;
+}
+.popularMovieItem:hover{
+	cursor: pointer;
+	background-color: rgba(235, 66, 63, 0.5);
+}
+
+/* ----- genre div ----- */
+#GenreDiv{
+	background-color: rgba(255,255,255,0.2);
+	padding: 5.25vh 2.5vw;
+	text-shadow: 0.5px 0.5px 1px #000000;
+}
+#GenreDiv h3{
+	color: #A22322;
+	font-size: 4vh;
+}
+#GenreDiv ul{
+	margin-top: 2vh;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#GenreDiv li{
+	list-style-type: none;
+	margin-top: 2vh;
+	color: #DBDBDB;
+	font-size: 2.5vh;
+	width: 18vw;
+}
+#GenreDiv li:hover{
+	cursor: pointer;
+	color: #EB423F;
+}
+#GenreDiv li a{
+	text-decoration: none;
+	color: inherit;
+}
+
+/* ----- footer ------ */
+footer{
+	height: 16vh;
+	color: #ececec;
+	background-color: rgba(0,0,0,0.6);
+	padding: 2vh 2.5vw;
+}
+footer img{
+	height: 2.5vh;
+}
+footer p{
+	margin-bottom: 0vh;
+	margin-top: 2.5vh;
+}
